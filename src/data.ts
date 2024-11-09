@@ -1,0 +1,28 @@
+export const meatAddOn = [
+  "Pepperoni",
+  "Italian sausage",
+  "Bacon",
+  "Ham",
+  "Ground beef",
+  "Chicken",
+  "Anchovies",
+  "Meatballs",
+  "Canadian bacon",
+  " Prosciutto",
+];
+export const vegetableAddOn = [
+  "Mushrooms",
+  "Onions",
+  "Bell peppers",
+  "Black olives",
+  "Tomatoes",
+  "Spinach",
+  "Garlic",
+  "Jalapeños",
+  "Banana peppers",
+  "Artichoke hearts",
+  "Roasted red peppers",
+  "Eggplant",
+  "Broccoli",
+  "Sun-dried tomatoes",
+];
