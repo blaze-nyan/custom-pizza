@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import ChooseVegetable from "./components/ChooseVegetable";
+import ShowPhoto from "./components/ShowPhoto";
+import SelectAll from "./components/SelectAll";
 import CheckOut from "./pages/CheckOut";
+import { vegetableAddOn } from "./data";
 
 const App = () => {
   const [addOn, setAddOn] = useState<string[]>([]);
@@ -20,6 +23,13 @@ const App = () => {
       }
     });
   };
+  const handleSelectAll = (itemList: string[]) => {
+    if (itemList.length === addOn.length) {
+      setAddOn([]);
+    } else {
+      setAddOn(itemList.map((item) => item));
+    }
+  };
   return (
     <Routes>
       <Route
@@ -28,6 +38,15 @@ const App = () => {
           <div className="bg-gray-900 min-h-screen text-center p-5 text-white">
             <h3 className="text-yellow-400 text-3xl">Make Custom Pizza</h3>
             <h4 className="text-2xl underline mb-4">Choose Addon</h4>
+            <ShowPhoto />
+            <SelectAll
+              handleSelectAll={handleSelectAll}
+              vegetableAddOn={vegetableAddOn}
+            >
+              {addOn.length === vegetableAddOn.length
+                ? "Delete All"
+                : "Select All"}
+            </SelectAll>
             <ChooseVegetable handleAddOn={handleAddOn} addOn={addOn} />
             <div className="w-full h-1 bg-white mt-2"></div>
             <div className="w-full h-72">

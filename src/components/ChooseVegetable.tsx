@@ -6,15 +6,20 @@ interface Props {
 const ChooseVegetable = ({ handleAddOn, addOn }: Props) => {
   return (
     <div>
-      <ul>
+      <ul className="max-w-xs m-auto">
         {vegetableAddOn.map((item, index) => {
           return (
             <li
               key={index}
               onClick={() => handleAddOn(item)}
-              className={addOn.includes(item) ? "text-green-700" : "text-white"}
+              className={
+                addOn.includes(item)
+                  ? "text-green-700 cursor-pointer hover:scale-125 transition-transform duration-200"
+                  : "text-white cursor-pointer hover:scale-125 transition-transform duration-200"
+              }
             >
-              {item}
+              {" "}
+              {item}{" "}
             </li>
           );
         })}
